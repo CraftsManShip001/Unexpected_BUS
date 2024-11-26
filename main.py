@@ -39,7 +39,7 @@ try:
         reader = csv.reader(f)
         for row in reader:
             if row[7] == "부산광역시":
-                Busan_bus.append([row[0], row[1], float(row[2]), float(row[3])])
+                Busan_bus.append([row[0], row[1], float(row[2]), float(row[3]),row[5]])
 except FileNotFoundError:
     raise FileNotFoundError("버스 정류장 CSV 파일을 찾을 수 없습니다.")
 
@@ -73,7 +73,7 @@ def get_nearest_bus_stops(request: LocationRequest):
     while cnt < 3:
         if not res[idx][1][1] in before:
             cnt += 1
-            result.append(('bus_id : %s' %(res[idx][1][0]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
+            result.append(('bus_id : %s' %(res[idx][1][4]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
             before.append(res[idx][1][1])
         idx += 1
 
