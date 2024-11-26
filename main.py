@@ -20,7 +20,8 @@ def haversine(lat1, lon1, lat2, lon2):
 # 데이터 로드
 Busan_bus = []
 try:
-    with open("국토교통부_전국 버스정류장 위치정보_20241028.csv", "r", encoding="euc-kr") as f:
+    with open("/app/data/국토교통부_전국 버스정류장 위치정보_20241028.csv", "r", encoding="euc-kr") as f:
+
         reader = csv.reader(f)
         for row in reader:
             if row[7] == "부산광역시":
