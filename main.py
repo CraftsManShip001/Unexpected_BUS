@@ -70,7 +70,7 @@ def get_nearest_bus_stops(request: LocationRequest):
     before = []
     result = []
     for idx in range(3):
-        result.append(('bus_id : %s' %(res[idx][1][4]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
+        result.append(('id : %d' %(i+1),'bus_id : %d' %(int(res[idx][1][4])),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
         before.append(res[idx][1][1])
 
     # 결과 반환
