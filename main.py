@@ -3,13 +3,15 @@ from pydantic import BaseModel
 import csv
 import math
 import os
+
+
+app = FastAPI()
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8080))
     uvicorn.run(app, host="0.0.0.0", port=port)
-
-app = FastAPI()
-
+    
 # 거리 구하는 함수
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371.0
