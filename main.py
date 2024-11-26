@@ -7,10 +7,7 @@ import os
 
 app = FastAPI()
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+
     
 # 거리 구하는 함수
 def haversine(lat1, lon1, lat2, lon2):
@@ -69,3 +66,8 @@ def get_nearest_bus_stops(request: LocationRequest):
 
     # 결과 반환
     return {"현재 위치에서 가장 가까운 3개의 버스 정류장": result}
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
