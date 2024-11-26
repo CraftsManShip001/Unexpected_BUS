@@ -73,7 +73,7 @@ def get_nearest_bus_stops(request: LocationRequest):
     while cnt < 3:
         if not res[idx][1][1] in before:
             cnt += 1
-            result.append(('정류장 : %s' %(res[idx][1][1]), '거리 : %.2fkm' %(res[idx][0])))
+            result.append(('bus_stop : %s' %(res[idx][1][1]), 'distance : %.2fkm' %(res[idx][0])))
             before.append(res[idx][1][1])
         idx += 1
 
