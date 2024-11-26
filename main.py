@@ -78,7 +78,7 @@ def get_nearest_bus_stops(request: LocationRequest):
         idx += 1
 
     # 결과 반환
-    return {"현재 위치에서 가장 가까운 3개의 버스 정류장": result}
+    return {"bus_stops": result}
 
 if __name__ == "__main__":
     import uvicorn
