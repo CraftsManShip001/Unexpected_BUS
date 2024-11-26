@@ -9,17 +9,15 @@ import os
 app = FastAPI()
 # CORS 설정
 origins = [
-    "http://127.0.0.1:5500",  # 로컬 개발 서버
-    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app/",  # 실제 배포된 서버
+    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app/",
     "http://localhost:3000",
-    # 필요한 경우 다른 출처를 추가할 수 있습니다
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,  # 허용할 출처 목록
     allow_credentials=True,
-    allow_methods=["*"],  # 허용할 HTTP 메서드
+    allow_methods=["POST"],  # 허용할 HTTP 메서드
     allow_headers=["*"],  # 허용할 헤더
 )
 
