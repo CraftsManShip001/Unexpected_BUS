@@ -9,7 +9,7 @@ import os
 app = FastAPI()
 # CORS 설정
 origins = [
-    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app/",
+    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app",
     "http://localhost:3000",
 ]
 
@@ -67,11 +67,15 @@ def get_nearest_bus_stops(request: LocationRequest):
             pass
     res.sort(key = lambda x : (x[0]))
     idx = 0
+    cnt = 0
     before = []
     result = []
-    for idx in range(3):
-        result.append(('id : %d' %(idx+1),'bus_id : %d' %(int(res[idx][1][4])),'bus_stop : %s' %(res[idx][1][1]), 'distance : %d' %(int(res[idx][0] * 1000))))
-        before.append(res[idx][1][1])
+    while cnt < 3:
+        if not res[idx][1][1] in before:
+            cnt += 1
+            result.append(('bus_id : %s' %(res[idx][1][4]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
+            before.append(res[idx][1][1])
+        idx += 1
 
     # 결과 반환
     return {"bus_stops": result}
