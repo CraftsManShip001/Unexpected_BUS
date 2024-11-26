@@ -67,15 +67,11 @@ def get_nearest_bus_stops(request: LocationRequest):
             pass
     res.sort(key = lambda x : (x[0]))
     idx = 0
-    cnt = 0
     before = []
     result = []
-    while cnt < 3:
-        if not res[idx][1][1] in before:
-            cnt += 1
-            result.append(('bus_id : %s' %(res[idx][1][4]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
-            before.append(res[idx][1][1])
-        idx += 1
+    for idx in range(3):
+        result.append(('bus_id : %s' %(res[idx][1][4]),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000))))
+        before.append(res[idx][1][1])
 
     # 결과 반환
     return {"bus_stops": result}
