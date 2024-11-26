@@ -7,8 +7,6 @@ import os
 
 app = FastAPI()
 
-
-    
 # 거리 구하는 함수
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371.0
