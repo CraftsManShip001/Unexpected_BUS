@@ -73,7 +73,7 @@ def get_nearest_bus_stops(request: LocationRequest):
     while cnt < 3:
         if not res[idx][1][1] in before:
             cnt += 1
-            result.append(('id : %d' %(idx+1)),'bus_stop : %s' %(res[idx][1][1]), 'distance : %dm' %(int(res[idx][0] * 1000)))
+            result.append(('id : %d' %(cnt+1)),'bus_stop : %s' %(res[idx][1][1]), 'distance : %d' %(int(res[idx][0] * 1000)))
             before.append(res[idx][1][1])
         idx += 1
 
