@@ -9,7 +9,7 @@ import os
 app = FastAPI()
 # CORS 설정
 origins = [
-    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app/",
+    "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app",
     "http://localhost:3000",
 ]
 
