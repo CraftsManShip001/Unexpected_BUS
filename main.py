@@ -11,7 +11,7 @@ app = FastAPI()
 origins = [
     "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app",
     "http://localhost:3000",
-    "https://unexpected-stories-front-r0600behk-kwon5700s-projects.vercel.app",
+    "https://unexpected-stories-front.vercel.app",
 ]
 
 app.add_middleware(
