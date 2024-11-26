@@ -11,6 +11,7 @@ app = FastAPI()
 origins = [
     "https://port-0-bus3-m3y6hf8w0b996b81.sel4.cloudtype.app",
     "http://localhost:3000",
+    "https://unexpected-stories-front-r0600behk-kwon5700s-projects.vercel.app/",
 ]
 
 app.add_middleware(
@@ -79,6 +80,7 @@ def get_nearest_bus_stops(request: LocationRequest):
 
     # 결과 반환
     return {"bus_stops": result}
+
 
 if __name__ == "__main__":
     import uvicorn
